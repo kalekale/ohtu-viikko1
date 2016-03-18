@@ -21,6 +21,28 @@ public class VarastoTest {
     }
 
     @Test
+    public void maaraNegatiivinen() {
+        varasto.lisaaVarastoon(-1);
+        assertEquals(0, varasto.getSaldo(), vertailuTarkkuus);
+    }
+
+    @Test
+    public void maaraSamaKuinMahtuu() {
+        varasto.lisaaVarastoon(10);
+        assertEquals(10, varasto.getSaldo(), vertailuTarkkuus);
+    }
+
+    @Test
+    public void maaraPienemppiKuinMahtuu() {
+        varasto.lisaaVarastoon(9);
+        assertEquals(9, varasto.getSaldo(), vertailuTarkkuus);
+    }
+    @Test
+    public void maaraaSuurempiKuinMahtuu() {
+        varasto.lisaaVarastoon(11);
+        assertEquals(10, varasto.getSaldo(), vertailuTarkkuus);
+    }
+    @Test
     public void konstruktoriLuoTyhjanVaraston() {
         assertEquals(0, varasto.getSaldo(), vertailuTarkkuus);
     }
@@ -54,6 +76,19 @@ public class VarastoTest {
 
         assertEquals(2, saatuMaara, vertailuTarkkuus);
     }
+
+    @Test
+    public void otetaanLiikaa() {
+        varasto.lisaaVarastoon(5);
+        assertEquals(5, varasto.otaVarastosta(10), vertailuTarkkuus);
+    }
+    @Test
+    public void otetaanNegatiivinen() {
+        varasto.lisaaVarastoon(5);
+        varasto.otaVarastosta(-1); 
+        assertEquals(0, varasto.otaVarastosta(-10), vertailuTarkkuus);
+    }
+
 
     @Test
     public void ottaminenLisääTilaa() {

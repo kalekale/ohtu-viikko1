@@ -3,7 +3,7 @@ package ohtu.ohtuvarasto;
 public class Varasto {
 
     // --- piilotettu tietorakenteen toteutus: ---
-    private double tilavuus;  // paljonko varastoon mahtuu,  > 0
+    private double tilavuus;  // paljonko varastoon mahtuu,  > 0 
     private double saldo;     // paljonko varastossa on nyt, >= 0
 
     // --- konstruktorit: ---
