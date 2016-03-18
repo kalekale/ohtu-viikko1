@@ -1,0 +1,3 @@
+#ignore tmp files and target folder
+*.tmp
+target/
